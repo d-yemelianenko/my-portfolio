@@ -25,6 +25,26 @@ services:
     volumes:
       - db_data:/var/lib/mysql
 
+  react:
+    build:
+      context: ./react-frontend
+      dockerfile: Dockerfile
+    container_name: my_portfolio-react
+    ports:
+      - "3001:3001"
+    environment:
+      - CHOKIDAR_USEPOLLING=true  # ważne dla hot-reload w Dockerze
+      - WATCHPACK_POLLING=true
+      - FAST_REFRESH=false
+    volumes:
+      - ./react-frontend:/app          # VOLUME - podgląd kodu
+      - /app/node_modules   
+    stdin_open: true
+    tty: true            # izolacja node_modules
+    depends_on:
+      - app
+
 volumes:
   app_data:   # kod aplikacji
   db_data:    # dane bazy
+
