@@ -1,0 +1,123 @@
+header{
+    background-color: #0a0a0a;
+}
+.hero {
+  background-color: #0a0a0a;
+  min-height: min-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.heroContainer {
+  max-width: 1000px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.heroContent {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.textContent {
+  color: #f8fafc;
+  padding-left: 2rem;
+}
+
+.greeting {
+  font-size: 1.5rem;
+  color: #f59e0b;
+  margin-bottom: 0.5rem;
+}
+
+.name {
+  font-size: 4rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: #f8fafc;
+}
+
+.title {
+  font-size: 1.8rem;
+  color: #cbd5e1;
+  margin-bottom: 2rem;
+}
+
+.contactBtn {
+  background-color: #f59e0b;
+  color: #0a0a0a;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.contactBtn:hover {
+  background-color: #d97706;
+  transform: translateY(-2px);
+}
+
+.imageContent {
+  background-color: #1a1a1a;
+  height: 400px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #f59e0b;
+}
+
+ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 10;
+    display: flex;
+    justify-content: flex-end;
+}
+
+nav li a {
+  font-size: clamp(1.1rem, 2.5vw, 1.4rem); /* min, ideal, max */
+  padding: clamp(12px, 2vw, 20px) clamp(20px, 3vw, 35px);
+  font-weight: 500;
+  color: #f59e0b;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+nav li a:hover {
+  color: #f7f722;          
+}
+
+@media (max-width: 768px) {
+  .heroContent {
+    grid-template-columns: 1fr; /* Jedna kolumna na mobile */
+    text-align: center;
+    gap: 2rem;
+  }
+  
+  .name {
+    font-size: 3rem; /* Mniejsze na mobile */
+  }
+  
+  .textContent {
+    padding-left: 0;
+  }
+}
+
+@media (min-width: 1024px) {
+  nav li a {
+    font-weight: 600;
+  }
+  
+  nav li a:hover {
+    color: #fff426;
+    background: rgba(254, 147, 17, 0.1); /* subtelny hover */
+    border-radius: 8px;
+  }
+}
