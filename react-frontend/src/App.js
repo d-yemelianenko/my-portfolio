@@ -1,6 +1,7 @@
 //import logo from './logo.svg';
 import React from 'react';
 import Header from './components/Header/Header.js';
+import Hero from './components/Hero/Hero.js';
 import About from './components/About/About.js';
 import './App.css';
 import Project from './components/Projects/Project.js';
@@ -10,6 +11,7 @@ function App() {
   return (
     <div className="App">
             <Header />
+            <Hero />
             <About />
             <Project />
             <Contact />
