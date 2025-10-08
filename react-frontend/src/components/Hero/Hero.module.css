@@ -5,7 +5,6 @@
   align-items: center;
   max-width: 1200px;
   width: 85%;
-  /*border: 3px solid brown;*/
 }
 
 .textContent {
@@ -19,7 +18,7 @@
 
 .greeting {
   font-size: 2rem;
-  color: #f59e0b;
+  color: var(--primary-color);
   margin: 0;
   font-weight: 400;
 }
@@ -28,20 +27,20 @@
   font-size: 3.5rem;
   font-weight: 700;
   margin: 0;
-  color: #f8fafc;
+  color: var(--text-color);
   line-height: 1.1;
 }
 
 .title {
   font-size: 1.5rem;
-  color: #cbd5e1;
+  color: var(--text-color);
   margin: 0.5rem 0;
   font-weight: 400;
 }
 
 .description {
   font-size: 1.1rem;
-  color: #e2e8f0;
+  color:var(--text-color);
   max-width: 500px;
   line-height: 1.6;
   margin: 1rem 0;
@@ -52,8 +51,8 @@
 }
 
 .contactBtn {
-  background: #f59e0b;
-  color: #fffefe;
+  background: var(--primary-color);
+  color: var(--text-color);
   padding: 1rem 2rem;
   margin-right: 15px;
   border: none;
@@ -61,12 +60,12 @@
   font-size: 1rem;
   font-weight: bold;
   cursor: pointer;
-  width: fit-content;
+  width: 150px;
   transition: all 0.3s ease;
 }
 
 .contactBtn:hover {
-  background-color: #ad22f7;
+  color: var(--hover-nav-color);
   transform: translateY(-2px);
   box-shadow: 0 10px 20px rgba(0,0,0,0.2);
 }

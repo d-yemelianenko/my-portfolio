@@ -1,3 +1,9 @@
+:root {
+  --primary-color: rgb(254, 159, 44);
+  --hover-nav-color: rgb(173, 34, 247);
+  --background-color: #282c34;
+  --text-color: #ffffff;
+}
 .App {
   text-align: center;
 }
@@ -13,21 +19,6 @@
   }
 }
 
-/*.App-header {
-  background-color: #282c34;
-  padding: 2px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}*/
-
-.App-link {
-  color: #61dafb;
-}
-
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -36,6 +27,7 @@
     transform: rotate(360deg);
   }
 }
+
 
 body {
   margin: 0%;
@@ -50,7 +42,7 @@ html, body, #root {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, rgb(102, 126, 234) 0%, rgb(118, 75, 162) 100%);
 }
 
 .content-section {           
@@ -60,7 +52,7 @@ html, body, #root {
 
 .section-title {
   font-size: 2.5rem;          
-  color: #fe9f2c;             
+  color: var(--primary-color);             
   text-align: center;    
   margin-bottom: 1rem;              
   font-weight: 700;            

@@ -1,3 +1,4 @@
+
 header {
   background-color: #1e293b; /* ciemny odcień niebieskiego */
   padding: 10px 20px;
@@ -10,7 +11,7 @@ header {
 ul{
     list-style-type: none;
     margin: 0;
-    padding: 10;
+    padding: 10px;
     display: flex;
     justify-content: flex-end;
 }
@@ -19,18 +20,88 @@ nav li a {
   font-size: clamp(1.1rem, 2.5vw, 1.4rem); /* min, ideal, max */
   padding: clamp(12px, 2vw, 20px) clamp(20px, 3vw, 35px);
   font-weight: 500;
-  color: #f59e0b;
+  color: var(--primary-color);
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
 nav li a:hover {
-  color: #ad22f7;          
+  color:var(--hover-nav-color);          
 }
 
-@media (min-width: 1024px) {
-  nav li a {
+.desktopNav {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 1.5rem; /* Odstęp między linkami */
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.mobileToggle {
+  display: none;
+}
+
+@media (max-width: 1024px) {
+  li a {
     font-weight: 600;
   }
+    .navList {
+        gap: 10px; /* Zmniejsz odstęp między linkami */
+    }
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .desktopNav {
+    display: none;  /* Ukryj desktop nav na mobile */
+  }
   
+  .mobileToggle {
+    display: block;  /* Pokaż hamburger na mobile */
+  }
+  
+  .mobileNav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 70%;
+    height: 100vh;
+    background: rgb(7, 1, 24);
+    border: 1px solid #333;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    width: 200px;
+    z-index: 1001;
+  }
+
+  .mobileNavList {
+    list-style-type: none;
+    margin: 0;
+    padding: 10px 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .mobileNavList li {
+    margin: 10px 0;
+    text-align: center;
+  }
+
+  .mobileNavList li a {
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    display: block;
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  .mobileNavList li a:hover {
+    background-color: #333;
+    color:var(--hover-nav-color);
+  }
 }
