@@ -1,11 +1,24 @@
 
 header {
-  background-color: #1e293b; /* ciemny odcień niebieskiego */
-  padding: 10px 20px;
+  background-color: var(--background-color);
+  padding: 0.5rem 0; /* Tylko padding góra-dół */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 100%;
   position: sticky;
   top: 0;
+  left: 0;
+  right: 0;
   z-index: 1000;
+}
+
+/* DODAJ KONTENER dla zawartości navbar */
+.nav-container {
+  max-width: 1200px; /* Tutaj ograniczamy zawartość */
+  margin: 0 auto;
+  padding: 0 1rem;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
 }
 
 ul{
@@ -18,7 +31,7 @@ ul{
 
 nav li a {
   font-size: clamp(1.1rem, 2.5vw, 1.4rem); /* min, ideal, max */
-  padding: clamp(12px, 2vw, 20px) clamp(20px, 3vw, 35px);
+  padding:clamp(20px, 3vw, 35px);
   font-weight: 500;
   color: var(--primary-color);
   text-decoration: none;
@@ -43,6 +56,138 @@ nav li a:hover {
 
 .mobileToggle {
   display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 21px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1002;
+}
+
+.bar {
+  width: 100%;
+  height: 3px;
+  background-color: var(--primary-color);
+  border-radius: 3px;
+  transition: all 0.3s ease;
+  transform-origin: center;
+}
+
+.mobileToggle.change .bar:nth-child(1) {
+  transform: translateY(9px) rotate(-45deg);
+  background-color: #FF6B35; /* Pomarańczowy X */
+}
+
+.mobileToggle.change .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.mobileToggle.change .bar:nth-child(3) {
+  transform: translateY(-9px) rotate(45deg);
+  background-color: #FF6B35; /* Pomarańczowy X */
+}
+
+.mobileNav {
+  position: fixed;
+  top: 0;
+  left: -100%; /* Start poza ekranem */
+  width: 100%;
+  height: 100vh;
+  background: rgba(19, 5, 56, 0.95); /* Półprzezroczyste tło */
+  backdrop-filter: blur(10px);
+  z-index: 1001;
+  transition: left 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.mobileNav.open {
+  left: 0; /* Wjeżdża na ekran */
+}
+
+.mobileNavList {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem; /* Odstęp między przyciskami */
+  width: 85%;
+  max-width: 300px;
+}
+
+.mobileNavList li {
+  margin: 0;
+  text-align: center;
+}
+
+/* PRZYCISKI MENU - nowy styl jak w przykładzie */
+.mobileNavList li a {
+  color: var(--primary-color);
+  width: 100%;
+  border: 3px solid var(--primary-color);
+  height: 60px;
+  display: flex;
+  padding: 0 30px;
+  background: rgb(36, 36, 36);
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+  align-items: center;
+  border-radius: 79px;
+  justify-content: center;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+
+.mobileNavList li a:focus {
+  background: #ff9d2efc; 
+  transform: scale(0.98);
+}
+
+
+.mobileNavList li {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: slideInUp 0.5s ease forwards;
+}
+
+.mobileNavList li:nth-child(1) { animation-delay: 0.1s; }
+.mobileNavList li:nth-child(2) { animation-delay: 0.2s; }
+.mobileNavList li:nth-child(3) { animation-delay: 0.3s; }
+.mobileNavList li:nth-child(4) { animation-delay: 0.4s; }
+.mobileNavList li:nth-child(5) { animation-delay: 0.5s; }
+
+@keyframes slideInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.mobileNav::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background:  rgb(36, 36, 36);
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.mobileNav.open::before {
+  opacity: 1;
 }
 
 @media (max-width: 1024px) {
@@ -57,51 +202,12 @@ nav li a:hover {
 /* Mobile styles */
 @media (max-width: 768px) {
   .desktopNav {
-    display: none;  /* Ukryj desktop nav na mobile */
+    display: none;
   }
   
   .mobileToggle {
-    display: block;  /* Pokaż hamburger na mobile */
-  }
-  
-  .mobileNav {
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: 70%;
-    height: 100vh;
-    background: rgb(7, 1, 24);
-    border: 1px solid #333;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    width: 200px;
-    z-index: 1001;
-  }
-
-  .mobileNavList {
-    list-style-type: none;
-    margin: 0;
-    padding: 10px 0;
-    display: flex;
-    flex-direction: column;
-  }
-
-  .mobileNavList li {
-    margin: 10px 0;
-    text-align: center;
-  }
-
-  .mobileNavList li a {
-    font-size: 1.2rem;
-    padding: 10px 20px;
-    display: block;
-    color: var(--primary-color);
-    text-decoration: none;
-    transition: background-color 0.3s ease, color 0.3s ease;
-  }
-
-  .mobileNavList li a:hover {
-    background-color: #333;
-    color:var(--hover-nav-color);
+    display: flex; /* Zmień na flex dla hamburgera */
+    position: relative;
   }
 }
+  
