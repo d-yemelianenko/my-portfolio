@@ -22,7 +22,7 @@ const Contact = () => {
     
     try {
       // TU BĘDZIE POŁĄCZENIE Z CAKEPHP
-      const response = await fetch('/api/contact', {
+      const response = await fetch('http://localhost:9001/api/contact', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
