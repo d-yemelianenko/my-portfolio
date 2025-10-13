@@ -1,7 +1,6 @@
-
 header {
   background-color: var(--background-color);
-  padding: 0.5rem 0; /* Tylko padding góra-dół */
+  padding: 0.5rem 0; 
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   width: 100%;
   position: sticky;
@@ -11,9 +10,8 @@ header {
   z-index: 1000;
 }
 
-/* DODAJ KONTENER dla zawartości navbar */
 .nav-container {
-  max-width: 1200px; /* Tutaj ograniczamy zawartość */
+  max-width: 1200px; 
   margin: 0 auto;
   padding: 0 1rem;
   display: flex;
@@ -46,7 +44,7 @@ nav li a:hover {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    gap: 1.5rem; /* Odstęp między linkami */
+    gap: 1.5rem; 
     font-size: 1.1rem;
     font-weight: 500;
     color: var(--primary-color);
@@ -78,7 +76,7 @@ nav li a:hover {
 
 .mobileToggle.change .bar:nth-child(1) {
   transform: translateY(9px) rotate(-45deg);
-  background-color: #FF6B35; /* Pomarańczowy X */
+  background-color: #FF6B35; 
 }
 
 .mobileToggle.change .bar:nth-child(2) {
@@ -87,16 +85,16 @@ nav li a:hover {
 
 .mobileToggle.change .bar:nth-child(3) {
   transform: translateY(-9px) rotate(45deg);
-  background-color: #FF6B35; /* Pomarańczowy X */
+  background-color: #FF6B35; 
 }
 
 .mobileNav {
   position: fixed;
   top: 0;
-  left: -100%; /* Start poza ekranem */
+  left: -100%;
   width: 100%;
   height: 100vh;
-  background: rgba(19, 5, 56, 0.95); /* Półprzezroczyste tło */
+  background: rgba(19, 5, 56, 0.95);
   backdrop-filter: blur(10px);
   z-index: 1001;
   transition: left 0.3s ease;
@@ -107,7 +105,7 @@ nav li a:hover {
 }
 
 .mobileNav.open {
-  left: 0; /* Wjeżdża na ekran */
+  left: 0;
 }
 
 .mobileNavList {
@@ -116,7 +114,7 @@ nav li a:hover {
   padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 1.5rem; /* Odstęp między przyciskami */
+  gap: 1.5rem; 
   width: 85%;
   max-width: 300px;
 }
@@ -126,7 +124,6 @@ nav li a:hover {
   text-align: center;
 }
 
-/* PRZYCISKI MENU - nowy styl jak w przykładzie */
 .mobileNavList li a {
   color: var(--primary-color);
   width: 100%;
@@ -195,29 +192,27 @@ nav li a:hover {
     font-weight: 600;
   }
     .navList {
-        gap: 10px; /* Zmniejsz odstęp między linkami */
+        gap: 10px; 
     }
 }
 
-/* Mobile styles */
 @media (max-width: 768px) {
   .desktopNav {
     display: none;
   }
   
   .mobileToggle {
-    display: flex; /* Zmień na flex dla hamburgera */
+    display: flex; 
     position: relative;
   }
   #header .section {
     min-height: 100vh;
-    padding: 60px 1rem 1rem; /* Padding na górze dla navbar */
+    padding: 60px 1rem 1rem; 
     align-items: center;
     justify-content: center;
     text-align: center;
   }
 
-  /* Upewnij się że content jest wyśrodkowany */
   #header .content-section {
     display: flex;
     flex-direction: column;
@@ -230,7 +225,7 @@ nav li a:hover {
     width: 100%;
     height: 100vh;
     left: -100%;
-    padding: 80px 1rem 2rem; /* Odstępy */
+    padding: 80px 1rem 2rem; 
   }
 
   .mobileNav.open {

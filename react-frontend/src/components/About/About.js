@@ -1,7 +1,5 @@
 import { useState } from 'react';
-import React from 'react';
 import styles from './About.module.css'; 
-
 
 function UnifiedSkillsSlider() {
   const [isPaused, setIsPaused] = useState(false);
