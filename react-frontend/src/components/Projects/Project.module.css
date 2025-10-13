@@ -1,25 +1,272 @@
-.projectSection{
-    background-color: black;
-    margin: 0%;
-    min-height: 50vh;
-    padding: 5px;
+.projectsGrid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    align-items: stretch;
+    max-width: 1200px;
+    margin: 0 auto 4rem auto;
+    padding: 0 1rem;
+}
+
+.projectCard {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 100%;
+    max-width: 350px;
+    text-align: center;
+    border: 2px solid transparent;
+}
+
+.projectCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    border-color: orange;
+}
+
+.projectContent h3 {
+    margin: 0 0 1rem 0;
+    font-size: 1.25rem;
+    color: #333;
+}
+
+.projectContent p {
+    margin: 0 0 1.5rem 0;
+    color: #666;
+    line-height: 1.5;
+}
+
+.viewProjectButton {
+    display: inline-block;
+    background: orange;
     color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
 }
 
-.projects-section {
-  min-height: 100vh;
-  padding: 5rem 1.5rem;
+.viewProjectButton:hover {
+    background: #e69500;
 }
 
-.projects-grid {
-  display: grid;
-  gap: 1.5rem;
-  width: 100%;
+.sliderSection {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    background: #f8f9fa;
+    border-radius: 12px;
 }
 
-.projectDescription{
-    font-size: 1.2rem;
-    color: #ffffff;
-    margin-bottom: 0.5rem;
-    text-align: left;
+.sliderTitle {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.projectName {
+    color: orange;
+    font-weight: bold;
+}
+
+.projectTabs {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.tab {
+    padding: 0.75rem 1.5rem;
+    border: 2px solid orange;
+    background: rgb(248, 222, 52);
+    color: rgb(0, 0, 0);
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 600;
+}
+
+.tab:hover {
+    background: #f24e12;
+}
+
+.activeTab {
+    background: orange;
+    color: rgb(0, 0, 0);
+}
+
+.sliderContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.sliderButton {
+    background: orange;
+    color: rgb(9, 8, 8);
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.sliderButton:hover {
+    background: #e69500;
+    color: black;
+}
+
+.slide {
+    position: relative;
+    max-width: 700px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    background: white;
+}
+
+.slideInfo {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 0.5rem;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+.dotsContainer {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.dot {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    border: none;
+    background: #ddd;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin: 0 6px;
+}
+
+.activeDot {
+    background: rgb(244, 214, 159);
+    transform: scale(1.2);
+}
+
+.Project_dot {
+  position: relative;
+}
+
+.dot:hover {
+    background: #ccc;
+}
+
+@media (min-width: 1024px) {
+    .projectsGrid {
+        justify-content: space-between;
+    }
+    
+    .projectCard {
+        width: calc(33.333% - 2rem);
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    .projectCard {
+        width: calc(50% - 2rem);
+    }
+}
+
+@media (max-width: 767px) {
+    .projectsGrid {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .projectCard {
+        max-width: 400px;
+        width: 100%;
+    }
+
+    .projectTabs {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .tab {
+        width: 200px;
+    }
+
+    .sliderContainer {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .sliderButtons {
+        display: flex;
+        gap: 1rem;
+        order: 2;
+    }
+
+    .sliderButton {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+@media (max-width: 480px) {
+    .projectCard {
+        padding: 1.5rem;
+    }
+    
+    .sliderImage {
+        max-height: 250px;
+    }
+    
+    .sliderSection {
+        padding: 1.5rem 0.5rem;
+    }
+}
+
+.sliderButton:focus,
+.tab:focus,
+.dot:focus,
+.viewProjectButton:focus {
+  outline: 2px solid #ff8a0c;
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sliderTrack {
+    animation: none;
+  }
+  
+  .skillItem {
+    transition: none;
+  }
 }
