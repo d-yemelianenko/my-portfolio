@@ -1,4 +1,3 @@
-import React from 'react';
 import styles from './Hero.module.css'; 
 
 const Hero = () => {
@@ -19,9 +18,26 @@ const Hero = () => {
           </div>
           </div>
           <div >
-            <img src="https://plus.unsplash.com/premium_photo-1671826911765-6386652c2e27?q=80&w=687&auto=format&fit=crop
-            &ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Developer"
-              className={styles.imageContent}
+            <img
+            src="/images/hero-bg.webp"
+            alt="Tło portfolio"
+            width={300}
+            height={300}
+            priority={true}
+            fetchpriority={"high"}
+            style={{
+              width: '300px',
+              height: '300px',
+              borderRadius: '50%',
+              objectFit: 'cover',
+              objectPosition: 'top',
+              boxShadow: '0 20px 40px rgba(0,0,0,0.3)',
+              transition: 'transform 0.3s ease',
+              display: 'block',
+              margin: '0 auto'
+            }}
+            onMouseEnter={(e) => e.target.style.transform = 'scale(1.05)'}
+            onMouseLeave={(e) => e.target.style.transform = 'scale(1)'}
             />
           </div>
     </div>
