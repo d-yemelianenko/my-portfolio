@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import styles from './Contact.module.css'; 
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -21,7 +22,7 @@ const Contact = () => {
     setIsSubmitting(true);
     
     try {
-      // TU BĘDZIE POŁĄCZENIE Z CAKEPHP
+      // POŁĄCZENIE Z CAKEPHP
       const response = await fetch('http://localhost:9001/api/contact', {
         method: 'POST',
         headers: {
@@ -46,8 +47,7 @@ const Contact = () => {
   return (
     <section className="section content-section" id="contact">
       <h2 className="section-title">Kontakt</h2>
-      <div className="contact-info">
-        <form className="contact-form" onSubmit={handleSubmit}>
+        <form className='form' onSubmit={handleSubmit}>
           <input 
             type="text" 
             name="name"
@@ -66,6 +66,7 @@ const Contact = () => {
           />
           <textarea 
             name="message"
+            className={styles.feedbackInput}
             placeholder="Wiadomość"
             value={formData.message}
             onChange={handleChange}
@@ -82,7 +83,6 @@ const Contact = () => {
             <p className="error-message">Błąd wysyłania. Spróbuj ponownie.</p>
           )}
         </form>
-      </div>
     </section>
   );
 };
