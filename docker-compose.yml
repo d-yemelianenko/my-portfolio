@@ -8,7 +8,7 @@ services:
     ports:
       - "9001:80"
     volumes:
-      - app_data:/var/www/html
+      - ./app:/var/www/html 
     depends_on:
       - db
 
@@ -45,6 +45,5 @@ services:
       - app
 
 volumes:
-  app_data:   # kod aplikacji
   db_data:    # dane bazy
 

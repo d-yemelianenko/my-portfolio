@@ -1,5 +1,84 @@
 .App {
   text-align: center;
+  width: 100%;
+}
+
+:root {
+  --primary-color: rgb(254, 159, 44);
+  --hover-nav-color: rgb(173, 34, 247);
+  --background-color: #282c34;
+  --text-color: #ffffff;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--background-color);
+  overflow-x: hidden;
+  width: 100%;
+}
+
+
+html, body, #root {
+  width: 100%;
+  max-width: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.section {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* ← ZMIEŃ NA CENTER */
+  background-color: var(--background-color);
+  padding: 2rem 1rem;
+  box-sizing: border-box;
+  width: 100%; 
+} 
+
+.content-section {
+  width: 100%;
+  max-width: 1200px; 
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column; 
+  align-items: center;
+  padding: clamp(1rem, 3vw, 2rem) clamp(0.5rem, 2vw, 1rem);
+}
+
+.section-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.section-title {
+  font-size: clamp(1.8rem, 4vw, 2.5rem); 
+  margin: 0 0 clamp(1rem, 3vw, 2rem); /* ← USUŃ margin-top */
+  color: var(--primary-color);
+  text-align: center;
+  font-weight: 700;
+  line-height: 1.2;
+  width: 100%;
+}
+
+
+#header .section {
+  min-height: 100vh;
+  padding: 0;
+  justify-content: center; /* ← DODAJ */
+}
+
+#about .section,
+#projects .section,
+#contact .section {
+  min-height: 100vh;
 }
 
 .App-logo {
@@ -55,20 +134,6 @@ html, body, #root {
   justify-content: center;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
 }
-/*.section {
-  background-color: black;
-  padding: 5px;
-  color: white;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;          
-  box-sizing: border-box; 
-  border: 1px solid red;  
-  margin: 10px;         
-}*/
-
 .content-section {           
   padding-top: none;
   padding-bottom: 5rem;
@@ -82,15 +147,4 @@ html, body, #root {
   font-weight: 700;            
   text-transform: none;        
   line-height: 1.2;            
-}
-
-@media (max-width: 768px) {
-  .section {
-    padding: 3rem 1rem;        /* mniejsze odstępy na mobile */
-    min-height: 80vh;          /* nie musi być pełny ekran */
-  }
-  
-  .hero-section {
-    padding: 4rem 1rem;
-  }
 }
