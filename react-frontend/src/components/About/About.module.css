@@ -76,10 +76,9 @@ h3 {
   filter: brightness(1.2);
 }
 
-/* DODAJ TE STYLE - POWIĘKSZONA NAZWA */
 .skillName {
-  font-size: 1.2rem;    /* Zwiększone */
-  font-weight: 700;     /* Pogrubione */
+  font-size: 1.2rem;   
+  font-weight: 700;    
   color: #ff8a0c;
   text-align: center;
   white-space: nowrap;
@@ -125,8 +124,8 @@ h3 {
     height: 80px;
   }
   
-  /* Mniejsza czcionka na mobile */
+
   .skillName {
-    font-size: 1rem; /* Nieco mniejsze na mobile */
+    font-size: 1rem; 
   }
 }
